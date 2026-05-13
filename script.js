@@ -1,15 +1,19 @@
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
-menuToggle.addEventListener("click", function () {
-  mainNav.classList.toggle("active");
-});
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("active");
+  });
+}
 
 const navLinks = document.querySelectorAll(".main-nav a");
 
 navLinks.forEach(function (link) {
   link.addEventListener("click", function () {
-    mainNav.classList.remove("active");
+    if (mainNav) {
+      mainNav.classList.remove("active");
+    }
   });
 });
 
